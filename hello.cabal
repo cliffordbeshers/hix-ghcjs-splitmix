@@ -2,30 +2,24 @@
 -- documentation, which can be found here:
 --   http://haskell.org/cabal/release/cabal-latest/doc/users-guide/
 
-name: hello
-version: 1.0.0.2
+name: hello-ghcjs
+version: 0.0.1
 license: BSD3
-license-file: LICENSE
-copyright: (c) Simon Marlow
-author: Simon Marlow
-maintainer: Simon Marlow <marlowsd@gmail.com>
-bug-reports: mailto:marlowsd@gmail.com
-stability: stable
-homepage: http://www.haskell.org/hello/
-synopsis: Hello World, an example package
+author: Clifford Beshers
+maintainer: Clifford Beshers <clifford.beshers@gmail.com>
+stability: experimental
+homepage: https://github.com/cliffordbeshers/hix-ghcjs-splitmix/
+synopsis: A simple hix/ghcjs that fails to build
 category: Console, Text
 cabal-version: >= 1.6
 build-type: Simple
 
 Description:
-  This is an implementation of the classic "Hello World" program in
-  Haskell, as an example of how to create a minimal Haskell
-  application using Cabal and Hackage.  Please submit any suggestions and
-  improvements.
+   Demonstrate a build bug somewhere in the haskell.nix ghcjs build chain,
 
 source-repository head
-  type:     darcs
-  location: http://darcs.haskell.org/hello/
+  type:     git
+  location: https://github.com/cliffordbeshers/hix-ghcjs-splitmix/
 
 flag threaded
   default: False
@@ -33,7 +27,7 @@ flag threaded
 executable hello
   hs-source-dirs: src
   main-is: hello.hs
-  build-depends: base >= 4.2 && < 5, containers, cassava
+  build-depends: base >= 4.2 && < 5
   if impl(ghcjs) || arch(javascript)
     build-depends: ghcjs-base, ghcjs-dom
   
