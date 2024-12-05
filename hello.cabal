@@ -11,7 +11,7 @@ stability: experimental
 homepage: https://github.com/cliffordbeshers/hix-ghcjs-splitmix/
 synopsis: A simple hix/ghcjs that fails to build
 category: Console, Text
-cabal-version: >= 1.6
+cabal-version: >= 1.8
 build-type: Simple
 
 Description:
