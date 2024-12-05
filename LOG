@@ -1,0 +1,26 @@
+$ nix run --accept-flake-config "github:input-output-hk/haskell.nix#hix" -- init -v
+`flake.nix` file created.
+`nix/hix.nix` project configuation:
+───────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       │ File: nix/hix.nix
+───────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1   │ {pkgs, ...}: {
+   2   │   # name = "project-name";
+   3   │   compiler-nix-name = "ghc92"; # Version of GHC to use
+   4   │ 
+   5   │   # Cross compilation support:
+   6   │   # crossPlatforms = p: pkgs.lib.optionals pkgs.stdenv.hostPlatform.isx86_64 ([
+   7   │   #   p.mingwW64
+   8   │   #   p.ghcjs
+   9   │   # ] ++ pkgs.lib.optionals pkgs.stdenv.hostPlatform.isLinux [
+  10   │   #   p.musl64
+  11   │   # ]);
+  12   │ 
+  13   │   # Tools to include in the development shell
+  14   │   shell.tools.cabal = "latest";
+  15   │   # shell.tools.hlint = "latest";
+  16   │   # shell.tools.haskell-language-server = "latest";
+  17   │ }
+───────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+$ 
